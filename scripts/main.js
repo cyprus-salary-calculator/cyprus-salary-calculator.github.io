@@ -19,6 +19,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("printCard")) {
+        // Find the closest parent card
+        var card = event.target.closest(".card");
+        if (card) {
+            printCard(card);
+        }
+    }
+});
+
 
 // Formats a number to a string in US locale with exactly 2 decimal places.
 function formatNumber(num) {
@@ -43,27 +53,46 @@ function calculateNetSalary() {
     setTimeout(() => {
         // Retrieve user inputs from the DOM.
         let salaryType = document.getElementById('salaryType').value;
-        let grossSalary = parseFloat(document.getElementById('grossSalary').value);
+        let gross = parseFloat(document.getElementById('grossSalary').value);
         let insuranceType = document.getElementById('insuranceType').value;
         let lifeInsurance = toNumber(document.getElementById('lifeInsurance').value);
         let providentFund = toNumber(document.getElementById('providentFund').value);
         let union = toNumber(document.getElementById('union').value);
         let otherDeductions = toNumber(document.getElementById('otherDeductions').value);
+        let thirteenSalary = document.getElementById('thirteenSalary').checked;
+
+        if (!gross) return;
+
+        let numberOfSalaries = 12;
+
+        if (thirteenSalary) {
+            numberOfSalaries = 13;
+        }
+
+        let grossSalary = gross;
 
         // Convert monthly salary to annual if necessary.
         if (salaryType === 'monthly') {
-            grossSalary *= 12;
+            grossSalary *= numberOfSalaries;
         }
+
+        let lifeInsuranceLimit = grossSalary / 5;
 
         // Convert monthly life insurance to annual if necessary.
         if (insuranceType === 'monthly') {
             lifeInsurance *= 12;
         }
 
+        if (lifeInsurance > lifeInsuranceLimit) {
+            document.getElementById('lifeInsurance').classList.add("is-invalid");
+        } else {
+            document.getElementById('lifeInsurance').classList.remove("is-invalid");
+        }
+
         // Calculate the annual provident fund amount as a percentage of gross salary.
         let providentFundAmount = 0.00;
         if (providentFund) {
-            providentFundAmount = grossSalary * (providentFund / 100);
+            providentFundAmount = ((grossSalary / numberOfSalaries) * 12) * (providentFund / 100);
         }
 
         // Calculate the annual union fee amount as a percentage of gross salary.
@@ -140,14 +169,68 @@ function calculateNetSalary() {
         document.getElementById('annualNet').innerText = '€' + formatNumber(netSalary);
 
         // Display the monthly amounts by dividing the annual values by 12.
-        document.getElementById('monthlyGross').innerText = '€' + formatNumber(grossSalary / 12);
-        document.getElementById('monthlyTaxable').innerText = '€' + formatNumber(taxableIncome / 12);
-        document.getElementById('monthlyTax').innerText = '€' + formatNumber(tax / 12);
-        document.getElementById('monthlySocialInsurance').innerText = '€' + formatNumber(socialInsurance / 12);
-        document.getElementById('monthlyGesy').innerText = '€' + formatNumber(gesy / 12);
+        document.getElementById('monthlyGross').innerText = '€' + formatNumber(grossSalary / numberOfSalaries);
+        document.getElementById('monthlyTaxable').innerText = '€' + formatNumber(taxableIncome / numberOfSalaries);
+        document.getElementById('monthlyTax').innerText = '€' + formatNumber(tax / numberOfSalaries);
+        document.getElementById('monthlySocialInsurance').innerText = '€' + formatNumber(socialInsurance / numberOfSalaries);
+        document.getElementById('monthlyGesy').innerText = '€' + formatNumber(gesy / numberOfSalaries);
         document.getElementById('monthlyProvidentFund').innerText = '€' + formatNumber(providentFundAmount / 12);
-        document.getElementById('monthlyUnion').innerText = '€' + formatNumber(unionAmount / 12);
-        document.getElementById('monthlyNet').innerText = '€' + formatNumber(netSalary / 12);
+        document.getElementById('monthlyUnion').innerText = '€' + formatNumber(unionAmount / numberOfSalaries);
+        document.getElementById('monthlyNet').innerText = '€' + formatNumber(netSalary / numberOfSalaries);
 
     }, 500); // End of setTimeout with a delay of 500 milliseconds.
+}
+
+
+function printCard(cardElement) {
+    // Clone the card to avoid modifying the original
+    var clonedCard = cardElement.cloneNode(true);
+
+    // Copy values from input fields, textareas, and selects
+    clonedCard.querySelectorAll("input, textarea, select").forEach((el, index) => {
+        if (el.type === "checkbox") {
+            // Handle checkboxes: Set checked attribute
+            if (el.checked) {
+                // clonedCard.querySelectorAll("input[type='checkbox']")[index].checked = true;
+            } else {
+                // clonedCard.querySelectorAll("input[type='checkbox']")[index].checked = false;
+            }
+        } else if (el.tagName === "TEXTAREA") {
+            // Handle textareas
+            clonedCard.querySelectorAll("textarea")[index].textContent = el.value;
+        } else {
+            // Handle inputs and selects
+            clonedCard.querySelectorAll("input, select")[index].setAttribute("value", el.value);
+        }
+    });
+
+    // Get the card content
+    var cardContent = clonedCard.innerHTML;
+
+    // Create a new window
+    var printWindow = window.open('', '', 'width=800,height=600');
+
+    // Write content to the new window
+    printWindow.document.write(`
+            <html>
+            <head>
+                <title>Print</title>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+                <style>
+                    body { font-family: Arial, sans-serif; padding: 20px; }
+                </style>
+            </head>
+            <body>
+                <div class="card text-dark bg-light">
+                    ${cardContent}
+                </div>
+                <script>
+                    window.onload = function() { window.print(); };
+                <\/script>
+            </body>
+            </html>
+        `);
+
+    // Close document to finish loading
+    printWindow.document.close();
 }

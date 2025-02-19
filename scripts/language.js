@@ -19,17 +19,13 @@ const translations = {
         gesyLabel: "General Healthcare System (GHS)",
         netLabel: "Net",
         howItWorksTitle: "How It Works",
-        explanationIntro:
-            "This calculator helps you determine your net salary in Cyprus by deducting Social Insurance, the General Healthcare System (GHS), income tax, and any other optional or mandatory contributions from your gross salary.",
-
+        explanationIntro: "This calculator helps you determine your net salary in Cyprus by deducting Social Insurance, the General Healthcare System (GHS), income tax, and any other optional or mandatory contributions from your gross salary.",
         grossSalaryTitle: "Gross Salary",
         grossSalaryText: "Your total salary before any deductions. You can enter it monthly or yearly.",
-
         lifeInsuranceTitle: "Life Insurance Premium",
         lifeInsuranceText: "The amount you pay for a life insurance policy. Some or all of this may be tax-deductible (depending on the legal limits). Enter it monthly or yearly.",
         providentFundTitle: "Provident Fund",
         providentFundText: "A retirement or savings plan (often employer-sponsored). The contribution is typically a percentage of your gross salary and may reduce your taxable income.",
-
         unionTitle: "Union",
         unionText: "If you belong to a professional union or association, you might pay a percentage of your salary as union fees. These fees can sometimes be deducted from your taxable income.",
         otherDeductionsTitle: "Other Tax Deductions",
@@ -41,6 +37,7 @@ const translations = {
         netSalaryTitle: "Net Salary Calculation",
         netSalaryText: "Once the taxable income is determined, the calculator applies the Cyprus tax brackets to calculate your income tax. Your net salary is then: Gross Salary - (All Contributions + Tax). The result is your take-home pay, shown with both monthly and annual breakdowns.",
         disclaimerText: "Disclaimer: This tool is provided for informational purposes only and we cannot guarantee its validity. Use at your own risk. This site does not collect or store any personal data.",
+        lifeInsuranceLimit: "Life Insurance Premium cannot exceed 1/5 of the Gross Salary",
     },
     gr: {
         mainTitle: "Υπολογιστής Καθαρού Μισθού Κύπρου",
@@ -77,11 +74,8 @@ const translations = {
         taxableIncomeText: "Το Φορολογητέο Εισόδημα υπολογίζεται ως: Μικτός Μισθός - (Κοινωνικές Ασφαλίσεις + ΓΕΣΥ + Ασφάλεια Ζωής + Ταμείο Αποταμίευσης + Συνδικαλισμός + Άλλες Εκπτώσεις). Το ακριβές ποσό κάθε έκπτωσης εξαρτάται από την εκάστοτε κυπριακή νομοθεσία.",
         netSalaryTitle: "Υπολογισμός Καθαρού Μισθού",
         netSalaryText: "Αφού προσδιοριστεί το φορολογητέο εισόδημα, ο υπολογιστής εφαρμόζει τις κυπριακές φορολογικές κλίμακες για να υπολογίσει τον φόρο εισοδήματος. Ο καθαρός μισθός σας προκύπτει ως: Μικτός Μισθός - (Όλες οι Εισφορές + Φόρος). Το αποτέλεσμα είναι ο μισθός που λαμβάνετε, εμφανιζόμενο με μηνιαία και ετήσια ανάλυση.",
-        disclaimerText: "Αποποίηση Ευθύνης: Αυτό το εργαλείο παρέχεται αποκλειστικά για ενημερωτικούς σκοπούς και δεν μπορούμε να εγγυηθούμε την εγκυρότητά του. Χρησιμοποιήστε το με δική σας ευθύνη. Αυτός ο ιστότοπος δεν συλλέγει ούτε αποθηκεύει προσωπικά δεδομένα."
-
-
-
-
+        disclaimerText: "Αποποίηση Ευθύνης: Αυτό το εργαλείο παρέχεται αποκλειστικά για ενημερωτικούς σκοπούς και δεν μπορούμε να εγγυηθούμε την εγκυρότητά του. Χρησιμοποιήστε το με δική σας ευθύνη. Αυτός ο ιστότοπος δεν συλλέγει ούτε αποθηκεύει προσωπικά δεδομένα.",
+        lifeInsuranceLimit: "Το ασφάλιστρο ζωής δεν μπορεί να υπερβαίνει το 1/5 του μικτού μισθού.",
     }
 };
 
