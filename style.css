@@ -30,17 +30,6 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-    }
-
-    .calculator-container, .explanation-container {
-        max-width: 100%;
-    }
-}
-
 
 #resultsContainer {
     /*display: none;*/
@@ -65,7 +54,7 @@ body {
 }
 
 .select-group input.form-control {
-    width: 50%
+    width: 40%
 }
 
 .fixed-footer {
@@ -77,4 +66,19 @@ body {
     border-top: 1px solid #dee2e6;
     padding: 10px 0;
     z-index: 1000; /* ensures it stays on top of other elements */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .calculator-container, .explanation-container {
+        max-width: 100%;
+    }
+
+    .select-group input.form-control {
+        width: 30%
+    }
 }
