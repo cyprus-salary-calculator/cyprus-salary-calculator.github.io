@@ -6,6 +6,17 @@ document.addEventListener('DOMContentLoaded', function () {
     elements.forEach(element => {
         element.addEventListener('input', calculateNetSalary);
     });
+
+    const collapseElement = document.getElementById("collapseHowItWorks");
+    const iconElement = document.querySelector("#howItWorks i");
+
+    collapseElement.addEventListener("show.bs.collapse", function () {
+        iconElement.classList.remove("fa-rotate-180");
+    });
+
+    collapseElement.addEventListener("hide.bs.collapse", function () {
+        iconElement.classList.add("fa-rotate-180");
+    });
 });
 
 
@@ -68,7 +79,7 @@ function calculateNetSalary() {
         // Calculate the taxable income by subtracting various deductions.
         // Note: providentFund here is not the computed amount but the input percentage value.
         let taxableIncome = grossSalary - (
-            socialInsurance + gesy + lifeInsurance + unionAmount + providentFund + otherDeductions
+            socialInsurance + gesy + lifeInsurance + unionAmount + providentFundAmount + otherDeductions
         );
 
         // Define the tax brackets with their income ranges and corresponding tax rates.

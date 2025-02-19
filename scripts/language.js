@@ -1,4 +1,4 @@
-// salary.js
+// main.js
 
 const translations = {
     en: {
