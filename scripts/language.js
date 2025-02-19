@@ -39,8 +39,8 @@ const translations = {
         taxableIncomeTitle: "Taxable Income",
         taxableIncomeText: "Taxable Income is calculated as: Gross Salary - (Social Insurance + GHS + Life Insurance + Provident Fund + Union Fees + Other Deductions). The exact deductibility of each item may depend on current Cyprus tax laws.",
         netSalaryTitle: "Net Salary Calculation",
-        netSalaryText: "Once the taxable income is determined, the calculator applies the Cyprus tax brackets to calculate your income tax. Your net salary is then: Gross Salary - (All Contributions + Tax). The result is your take-home pay, shown with both monthly and annual breakdowns."
-
+        netSalaryText: "Once the taxable income is determined, the calculator applies the Cyprus tax brackets to calculate your income tax. Your net salary is then: Gross Salary - (All Contributions + Tax). The result is your take-home pay, shown with both monthly and annual breakdowns.",
+        disclaimerText: "Disclaimer: This tool is provided for informational purposes only and we cannot guarantee its validity. Use at your own risk. This site does not collect or store any personal data.",
     },
     gr: {
         mainTitle: "Υπολογιστής Καθαρού Μισθού Κύπρου",
@@ -76,7 +76,11 @@ const translations = {
         taxableIncomeTitle: "Φορολογητέο Εισόδημα",
         taxableIncomeText: "Το Φορολογητέο Εισόδημα υπολογίζεται ως: Μικτός Μισθός - (Κοινωνικές Ασφαλίσεις + ΓΕΣΥ + Ασφάλεια Ζωής + Ταμείο Αποταμίευσης + Συνδικαλισμός + Άλλες Εκπτώσεις). Το ακριβές ποσό κάθε έκπτωσης εξαρτάται από την εκάστοτε κυπριακή νομοθεσία.",
         netSalaryTitle: "Υπολογισμός Καθαρού Μισθού",
-        netSalaryText: "Αφού προσδιοριστεί το φορολογητέο εισόδημα, ο υπολογιστής εφαρμόζει τις κυπριακές φορολογικές κλίμακες για να υπολογίσει τον φόρο εισοδήματος. Ο καθαρός μισθός σας προκύπτει ως: Μικτός Μισθός - (Όλες οι Εισφορές + Φόρος). Το αποτέλεσμα είναι ο μισθός που λαμβάνετε, εμφανιζόμενο με μηνιαία και ετήσια ανάλυση."
+        netSalaryText: "Αφού προσδιοριστεί το φορολογητέο εισόδημα, ο υπολογιστής εφαρμόζει τις κυπριακές φορολογικές κλίμακες για να υπολογίσει τον φόρο εισοδήματος. Ο καθαρός μισθός σας προκύπτει ως: Μικτός Μισθός - (Όλες οι Εισφορές + Φόρος). Το αποτέλεσμα είναι ο μισθός που λαμβάνετε, εμφανιζόμενο με μηνιαία και ετήσια ανάλυση.",
+        disclaimerText: "Αποποίηση Ευθύνης: Αυτό το εργαλείο παρέχεται αποκλειστικά για ενημερωτικούς σκοπούς και δεν μπορούμε να εγγυηθούμε την εγκυρότητά του. Χρησιμοποιήστε το με δική σας ευθύνη. Αυτός ο ιστότοπος δεν συλλέγει ούτε αποθηκεύει προσωπικά δεδομένα."
+
+
+
 
     }
 };

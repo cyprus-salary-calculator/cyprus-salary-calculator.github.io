@@ -5,16 +5,7 @@ body {
     padding-bottom: 120px; /* Adjust this value to match your footer's height */
 }
 
-.main-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-}
-
 .calculator-container {
-    flex: 2;
-    max-width: 60%;
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -22,35 +13,15 @@ body {
 }
 
 .explanation-container {
-    flex: 1;
-    max-width: 30%;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-
-#resultsContainer {
-    /*display: none;*/
-}
-
 .table th {
     background-color: #007bff;
     color: white;
-}
-
-.loading {
-    display: none;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.results-container p {
-    display: flex;
-    justify-content: space-between;
 }
 
 .select-group input.form-control {
