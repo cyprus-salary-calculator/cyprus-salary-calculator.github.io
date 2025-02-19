@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
     padding: 20px;
+    padding-bottom: 120px; /* Adjust this value to match your footer's height */
 }
 
 .main-container {
@@ -65,4 +66,15 @@ body {
 
 .select-group input.form-control {
     width: 50%
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #f8f9fa; /* light background color */
+    border-top: 1px solid #dee2e6;
+    padding: 10px 0;
+    z-index: 1000; /* ensures it stays on top of other elements */
 }

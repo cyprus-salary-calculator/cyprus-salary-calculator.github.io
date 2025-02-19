@@ -3,16 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyprus Net Salary Calculator</title>
+    <title>Cyprus Net Salary Calculator - Calculate Your Net Income in Cyprus</title>
+    <meta name="description" content="Use our Cyprus Net Salary Calculator to determine your net income by deducting Social Insurance, GHS, income tax, and other contributions from your gross salary.">
+    <meta name="keywords" content="Cyprus, Net Salary, Salary Calculator, Social Insurance, GHS, Cyprus Tax, Income Tax, Calculator">
+    <meta name="author" content="Petros Andreou">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Cyprus Net Salary Calculator">
+    <meta property="og:description" content="Calculate your net income in Cyprus by accounting for Social Insurance, GHS, income tax, and other deductions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cyprus-salary-calculator.github.io/">
+    <meta property="og:image" content="https://cyprus-salary-calculator.github.io/images/logo.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cyprus Net Salary Calculator">
+    <meta name="twitter:description" content="Calculate your net income in Cyprus by accounting for Social Insurance, GHS, income tax, and other deductions.">
+    <meta name="twitter:image" content="https://cyprus-salary-calculator.github.io/images/logo.webp">
+
+    <!-- Optional: Canonical URL -->
+    <link rel="canonical" href="https://cyprus-salary-calculator.github.io/">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <!-- Make sure salary.js is loaded after the DOM is ready or at the end of body -->
-    <script src="salary.js" defer></script>
-    <script src="language.js" defer></script>
+
+    <script src="scripts/salary.js" defer></script>
+    <script src="scripts/language.js" defer></script>
 </head>
 <body>
 <!-- Language selector -->
-<div class="language-selector p-3 text-end">
+<div class="language-selector pb-3 text-end">
     <select id="languageSelect" onchange="changeLanguage(this.value)">
         <option value="en">English</option>
         <option value="gr">Ελληνικά</option>
@@ -22,8 +44,8 @@
 <div class="main-container">
     <div class="calculator-container">
         <h2 id="mainTitle" class="text-center">Cyprus Net Salary Calculator</h2>
-        <div class="row mt-4">
-            <div class="col-6">
+        <div class="row mt-2">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label id="grossSalaryLabel" for="grossSalary">Gross Salary</label>
                     <div class="input-group select-group">
@@ -36,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label id="lifeInsuranceLabel" for="lifeInsurance">Life Insurance Premium</label>
                     <div class="input-group select-group">
@@ -49,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 mt-4">
+            <div class="col-md-6 mt-2">
                 <div class="form-group">
                     <label id="providentFundLabel" for="providentFund">Provident Fund</label>
                     <div class="input-group">
@@ -58,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 mt-4">
+            <div class="col-md-6 mt-2">
                 <div class="form-group">
                     <label id="unionLabel" for="union">Union</label>
                     <div class="input-group">
@@ -69,7 +91,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6 mt-4">
+            <div class="col-md-6 mt-2">
                 <div class="form-group">
                     <label id="otherDeductionsLabel" for="otherDeductions">Other Tax Deductions</label>
                     <div class="input-group select-group">
@@ -88,7 +110,7 @@
         <!-- Results (you may also want to add IDs or data attributes to these texts if needed) -->
         <div id="resultsContainer">
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <h5 class="annuallyLabel fw-bold">Annually</h5>
                     <table class="table table-bordered table-striped">
                         <tbody>
@@ -127,7 +149,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6">
                     <h5 class="monthlyLabel fw-bold">Monthly</h5>
                     <table class="table table-bordered table-striped">
                         <tbody>
@@ -237,4 +259,13 @@
 
 </div>
 </body>
+<footer class="fixed-footer">
+    <div class="container text-center">
+        <p>&copy; 2025 Created by <a href="https://github.com/petrandr" target="_blank">Petros Andreou</a></p>
+        <p class="disclaimer">
+            Disclaimer: This tool is provided for informational purposes only and we cannot guarantee its validity. Use at your own risk.
+        </p>
+    </div>
+</footer>
+
 </html>
